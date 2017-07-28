@@ -1,0 +1,16 @@
+android {
+  productFlavors {
+    "doorbell" {
+      dimension "doorbell"
+    }
+  }
+}
+
+repositories {
+  jcenter()
+  mavenCentral()
+}
+
+dependencies {
+	compile "io.doorbell:android-sdk:0.2.6@aar"
+}
