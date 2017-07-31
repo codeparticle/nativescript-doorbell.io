@@ -15,6 +15,4 @@ showDoorbellFeedback(appId, appKey, viewController);
 
 FeedbackContainer is a StackLayout in the html of the page where the function is called from. It does not need to have any particular alignment. It is only used by iOS.
 
-appId is the id of the app in the app store.
-
-appKey is the key from doorbell.io.
+```appId``` and ```appKey``` can be obtained from [Doorbell.io](https://doorbell.io)
