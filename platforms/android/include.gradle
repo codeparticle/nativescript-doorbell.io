@@ -1,11 +1,3 @@
-android {
-  productFlavors {
-    "doorbell" {
-      dimension "doorbell"
-    }
-  }
-}
-
 repositories {
   jcenter()
   mavenCentral()
