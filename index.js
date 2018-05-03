@@ -9,9 +9,9 @@ if (platform.isAndroid) {
     feedback.show();
   }
 } else {
-  exports.showDoorbellFeedback = function(appId, appKey, viewController) {
-    let feedback = Doorbell.alloc().initWithApiKeyAppId(appKey, appId);
-    feedback.showFeedbackDialogInViewControllerCompletion(viewController, (error) => {});
+  exports.showDoorbellFeedback = function(appId, appKey, viewController, animated = true) {
+    const feedback = Doorbell.alloc().initWithApiKeyAppId(appKey, appId);
+    feedback.showFeedbackDialogInViewControllerCompletionAnimated(viewController, (error) => {}, animated);
   }
 }
  
