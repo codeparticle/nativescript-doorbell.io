@@ -7,7 +7,7 @@ Doorbell.io plugin for nativescript
 # Usage
 ```
 import { showDoorbellFeedback } from 'nativescript-doorbell.io';
-import { isIOS } from 'platform';
+import { isIOS } from 'tns-core-modules/platform';
 
 const viewController = isIOS ? this.feedbackContainer.nativeElement.ios.viewController : null;
 showDoorbellFeedback(appId, appKey, viewController);
