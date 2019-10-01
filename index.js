@@ -32,7 +32,13 @@ if (platform.isAndroid) {
         feedback.addPropertyWithNameAndValue(p, properties[p]);
       }
     }
-    feedback.showFeedbackDialogInViewControllerCompletion(viewController, error => {});
+    if (viewController) {
+      feedback.showFeedbackDialogInViewControllerCompletion(viewController, error => {
+        if (error) {
+          throw error;
+        }
+      });
+    }
   };
 }
 
