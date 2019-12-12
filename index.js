@@ -15,7 +15,7 @@ if (platform.isAndroid) {
         feedback.addProperty(p, properties[p]);
       }
     }
-    feedback.show();
+    return feedback.show();
   };
 } else {
   exports.showDoorbellFeedback = function(
@@ -33,11 +33,14 @@ if (platform.isAndroid) {
       }
     }
     if (viewController) {
-      feedback.showFeedbackDialogInViewControllerCompletion(viewController, error => {
-        if (error) {
-          throw error;
+      feedback.showFeedbackDialogInViewControllerCompletion(
+        viewController,
+        error => {
+          if (error) {
+            throw error;
+          }
         }
-      });
+      );
     }
   };
 }
