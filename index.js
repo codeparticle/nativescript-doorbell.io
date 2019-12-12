@@ -4,7 +4,11 @@ var platform = require('platform');
 var exports = {};
 
 if (platform.isAndroid) {
-  exports.showDoorbellFeedback = function(appId, appKey, properties = null) {
+  exports.showDoorbellFeedback = function(
+    appId,
+    appKey,
+    properties = undefined
+  ) {
     const feedback = new io.doorbell.android.Doorbell(
       application.android.startActivity,
       parseInt(appId),
@@ -22,7 +26,7 @@ if (platform.isAndroid) {
     appId,
     appKey,
     viewController,
-    properties = null,
+    properties = undefined,
     animated = true
   ) {
     const feedback = Doorbell.alloc().initWithApiKeyAppId(appKey, appId);
