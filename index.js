@@ -16,7 +16,7 @@ if (platform.isAndroid) {
       appKey
     );
     if (properties) {
-      for (var p in properties) {
+      for (let p in properties) {
         feedback.addProperty(p, properties[p]);
       }
     }
@@ -33,7 +33,7 @@ if (platform.isAndroid) {
     const feedback = Doorbell.alloc().initWithApiKeyAppId(appKey, appId);
     feedback.animated = animated;
     if (properties) {
-      for (var p in properties) {
+      for (let p in properties) {
         feedback.addPropertyWithNameAndValue(p, properties[p]);
       }
     }
