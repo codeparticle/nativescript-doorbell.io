@@ -1,6 +1,6 @@
 {
   "name": "nativescript-doorbell.io",
-  "version": "0.0.8",
+  "version": "0.0.7",
   "homepage": "https://github.com/codeparticle/nativescript-doorbell.io",
   "nativescript": {
     "platforms": {
