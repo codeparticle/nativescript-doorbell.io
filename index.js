@@ -1,9 +1,9 @@
 import { Application, isAndroid } from '@nativescript/core';
 
-var exports = {};
+let showDoorbellFeedback;
 
 if (isAndroid) {
-  exports.showDoorbellFeedback = function (appId, appKey, viewController, properties = undefined) {
+  showDoorbellFeedback = function (appId, appKey, viewController, properties = undefined) {
     const feedback = new io.doorbell.android.Doorbell(
       Application.android.startActivity,
       parseInt(appId),
@@ -17,7 +17,7 @@ if (isAndroid) {
     return feedback.show();
   };
 } else {
-  exports.showDoorbellFeedback = function (
+  showDoorbellFeedback = function (
     appId,
     appKey,
     viewController,
@@ -41,4 +41,4 @@ if (isAndroid) {
   };
 }
 
-module.exports = exports;
+export { showDoorbellFeedback };
