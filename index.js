@@ -1,17 +1,11 @@
-var application = require('application');
-var platform = require('platform');
+import { Application, isAndroid } from '@nativescript/core';
 
 var exports = {};
 
-if (platform.isAndroid) {
-  exports.showDoorbellFeedback = function(
-    appId,
-    appKey,
-    viewController,
-    properties = undefined
-  ) {
+if (isAndroid) {
+  exports.showDoorbellFeedback = function (appId, appKey, viewController, properties = undefined) {
     const feedback = new io.doorbell.android.Doorbell(
-      application.android.startActivity,
+      Application.android.startActivity,
       parseInt(appId),
       appKey
     );
@@ -23,7 +17,7 @@ if (platform.isAndroid) {
     return feedback.show();
   };
 } else {
-  exports.showDoorbellFeedback = function(
+  exports.showDoorbellFeedback = function (
     appId,
     appKey,
     viewController,
@@ -38,14 +32,11 @@ if (platform.isAndroid) {
       }
     }
     if (viewController) {
-      feedback.showFeedbackDialogInViewControllerCompletion(
-        viewController,
-        error => {
-          if (error) {
-            throw error;
-          }
+      feedback.showFeedbackDialogInViewControllerCompletion(viewController, (error) => {
+        if (error) {
+          throw error;
         }
-      );
+      });
     }
   };
 }
