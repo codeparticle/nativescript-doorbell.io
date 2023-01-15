@@ -4,8 +4,8 @@
   "homepage": "https://github.com/codeparticle/nativescript-doorbell.io",
   "nativescript": {
     "platforms": {
-      "ios": "6.0.0",
-      "android": "6.0.0"
+      "ios": "7.0.0",
+      "android": "7.0.0"
     }
   }
 }
